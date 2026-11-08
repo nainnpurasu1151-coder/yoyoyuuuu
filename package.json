@@ -1,0 +1,15 @@
+{
+  "name": "line-youtube-liff",
+  "version": "1.0.0",
+  "description": "LINEの中だけで動くYouTubeアプリ (LIFF + Messaging API)",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

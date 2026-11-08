@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>LINE Tube</title>
+  <link rel="stylesheet" href="style.css" />
+  <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
+<body>
+  <!-- LINE外で開かれたとき -->
+  <div id="gate" class="gate" hidden>
+    <div class="gate-box">
+      <div class="logo big">▶</div>
+      <h1>LINE Tube</h1>
+      <p>このアプリはLINEの中で使えます。</p>
+      <a id="gate-link" class="btn">LINEで開く</a>
+    </div>
+  </div>
+
+  <div id="app" hidden>
+    <!-- プレイヤー (上部固定) -->
+    <section id="player-wrap" class="player-wrap" hidden>
+      <div class="player-ratio"><div id="player"></div></div>
+      <div class="now">
+        <div class="now-text">
+          <div id="now-title" class="now-title"></div>
+          <div id="now-meta" class="now-meta"></div>
+        </div>
+        <div class="now-actions">
+          <button id="btn-fav" class="icon-btn" aria-label="お気に入り">☆</button>
+          <button id="btn-share" class="icon-btn" aria-label="トークに送る">↗</button>
+          <button id="btn-close" class="icon-btn" aria-label="閉じる">✕</button>
+        </div>
+      </div>
+      <label class="autoplay"><input type="checkbox" id="autoplay" checked /> 次の動画を自動再生</label>
+    </section>
+
+    <header class="top">
+      <form id="search-form" class="search">
+        <span class="logo">▶</span>
+        <input id="q" type="search" placeholder="YouTubeを検索" autocomplete="off" enterkeyhint="search" />
+        <button type="submit" aria-label="検索">🔍</button>
+      </form>
+      <nav class="tabs">
+        <button data-tab="home" class="active">急上昇</button>
+        <button data-tab="search">検索</button>
+        <button data-tab="favs">お気に入り</button>
+        <button data-tab="history">履歴</button>
+      </nav>
+    </header>
+
+    <main>
+      <ul id="list" class="list"></ul>
+      <div id="status" class="status"></div>
+      <button id="more" class="btn more" hidden>もっと見る</button>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
